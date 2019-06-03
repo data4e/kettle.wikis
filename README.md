@@ -10,7 +10,6 @@
 ### 关于本站点
 
 - 本站点使用```MarkDown``` 编辑，部署在GitHub Pages 上，域名为本人个人注册，并未与任何企业合作，未用作任何商业用途。
-- 站点内容采用 [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.zh) 协议公开，如果需要转载，请务必按照协议内容
 
 ### 为什么我要整理这篇文档 ？ 
 

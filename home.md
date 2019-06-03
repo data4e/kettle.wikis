@@ -1,14 +1,20 @@
-# kettle
+# 认识kettle
 
 ### kettle简介
 - **kettle** 也被叫做 **Pentaho Data Integration(简称 PDI )** 
 - [百度百科](https://baike.baidu.com/item/Kettle)对kettle已经有详细对介绍，此处对```kettle```的定义不做赘述。
 - 其他介绍资料可参考 **开源中国** 的开源软件介绍 ：[开源 ETL 工具 Kettle](https://www.oschina.net/p/kettle)
-- 对于介绍 **kettle** 的书籍，推荐[使用PDI构建开源ETL解决方案](https://book.douban.com/subject/25866405/)
+- 对于介绍 **kettle** 的书籍，推荐[使用PDI构建开源ETL解决方案](https://book.douban.com/subject/25866405/)(本文档有很多内容也是来源于本书)
 
 ### ETL
 
-- ETL 是 **Extract-Transform-Load** 三个单词的缩写，顾名思义，ETL 说的是数据 抽取、转换、加载的一个过程，是构建数据仓库的一个重要步骤。
+> ETL 是 **Extract-Transform-Load** 三个单词的缩写，顾名思义，ETL 说的是数据 抽取、转换、加载的一个过程，是构建数据仓库的一个重要步骤。
+
+在[使用PDI构建开源ETL解决方案](https://book.douban.com/subject/25866405/)这本书中第一章对ETL的简单定义是：
+**"将数据从OLTP系统中转移到数据仓库中的一系列操作的结合"**，当然，这个定义中说将数据从OLTP系统迁移到数据仓库，因为太具体而不太准确，准确的说
+应该是从一切可能产生数据的地方将数据迁移到数据仓库。
+
+本文档将不会对ETL进行过多的讲述，后续内容如果有涉及，也会是简单的带过，如果需要，还请自行了解。
 
 ### 作业与转换
 
@@ -20,9 +26,12 @@
     
 - 对于作业、转换、跳的具体细节以及使用方式，请查看[spoon使用](spoon/start)
 
+### 资源库
+Kettle中通过资源库的形式组织、管理作业和转换，关于资源库的更多内容在[Kettle资源库](/spoon/repositorie.md)将会有详细的介绍。
+
 ### 可视化编程
 
-- kettle提供了一个可视化编程的工具[spoon](spoon/start)，通过该工具，可以让使用者将更多的时间用在设计数据处理的流程上，
+kettle提供了一个可视化编程的工具[spoon](spoon/start)，通过该工具，可以让使用者将更多的时间用在设计数据处理的流程上，
 而不是在开发上，所以通过可视化工具设计出来的流程，都会以.ktr、.kjb结尾的文件存储与文件系统，或者直接存储于数据库中。这些文件或数据库资源将
 被kettle的其他组件运行。
 
