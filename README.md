@@ -25,7 +25,7 @@
 6. 如果贡献的内容引用、转载与他处，请务必附上来源 。
 
 ### 本地启动本文档
-- 由于本站点部署在GitPages 上，会出现国内访问龟速的问题。Gitee Pages服务免费版目前不是很好用，暂时没有部署Gitee版，如果你刚好遇见了访问缓慢的问题，
+- 由于本站点部署在GitHub Pages 上，会出现国内访问龟速的问题。Gitee Pages服务免费版目前不是很好用，暂时没有部署Gitee版，如果你刚好遇见了访问缓慢的问题，
 可以尝试将本站点源代码clone到本地，启动本地服务来访问。
 - 本站点使用[docsify](https://docsify.js.org/#/)部署，本地启动方法请参考[docsify官方文档](https://docsify.js.org/#/?id=docsify)
 
