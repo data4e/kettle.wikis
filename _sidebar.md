@@ -10,6 +10,7 @@
     - [kettle资源库](/spoon/repositorie.md)
    - 转换步骤
     - [Abort中止步骤](/step/abort.md)
+    - [添加校验列](/step/addACheckSum.md)
    - KitChen
    - Pan
    - Carte
