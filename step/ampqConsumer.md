@@ -76,3 +76,55 @@ AMQP使用者设置选项卡中的选项和设置使您可以在第一次在转�
 ### 使用现有AMQP消息队列
 
 要使用代理上已存在的AMQP消息队列，请在“设置”选项卡中定义选项，如下所示：
+
+| 选项 | 描述 |
+| --- | --- |
+| 连接 | 指定此步骤连接到的AMQP代理的URI地址，以将消息提取到PDI中。有关详细信息，请参阅：[rabbit mp uri](https//www.rabbitmq.com/uri-spec.html) |
+| 队列名称 | 指定此步骤将从中提取消息的现有AMQP消息队列名称。指定的队列必须符合以下参数：<li>耐用</li><li>不自动删</li><li>非排他性</li><br>**如果指定尚不存在的队列名称，则此步骤将创建新队列。新队列将符合相同的参数。请参阅创建新的AMQP消息队列。** |
+| 交换名称 | 指定从中绑定队列的现有交换名称。<br> 将Exchange名称留空以使用DEFAULT  作为Exchange类型（如下所示）并将Exchange类型设置为DIRECT。该AMQP生产者一步都要求在其匹配的空白项设置选项卡为Exchange名称。 |
+| 交换类型 | 指定此交换使用的类型模式。<br>DIRECT -根据消息路由密钥将消息路由到队列。<li>DEFAULT  - 要使用DEFAULT交换类型，请不要指定Exchange名称  （上面）并将Exchange类型设置为DIRECT。</li><br>FANOUT - 将消息路由到绑定到扇出交换的所有队列，并忽略路由密钥。<br>TOPIC -根据消息路由密钥与用于将队列绑定到交换的模式之间的匹配，将消息路由到一个或多个队列。 <br>HEADERS -使用一个或多个键/值对路由消息，这些键/值对更容易表示为消息头而不是路由键。|
+| 路由密钥 | 使用“路由密钥”表指定定义交换和队列之间绑定的路由密钥。有关 更多信息，  请参阅指定路由密钥 |
+| Headers | 使用Headers表指定 与相应标头关联的Name和Value。有关 更多信息，请参阅指定标题。|
+
+### 指定路由密钥
+
+使用DIRECT或TOPIC  作为Exchange 类型时，请 在“路由密钥”表中指定相应的路由密钥（或多个密钥）。路由键作为字符串名称输入。
+
+![](/image/PDI_TransStep_Table_Routing-Keys.png)
+
+> 如果选择  DIRECT作为Exchange类型，并将Exchange名称留空，则无论是否在表中指定任何路由键，都会将在“ 队列名称”选项中指定的队列名称用作路由密钥。
+
+为Consumer步骤指定路由键配置并运行转换后，会将路由键和Consumer配置永久绑定到指定的队列。即使您随后从此路由密钥表中删除了路由密钥，绑定也将保留在AMQP代理中。有关如何验证队列绑定的更多信息，请参阅：[https://www.rabbitmq/rabbitmqctl.8.html#list_bindings](https://www.rabbitmq/rabbitmqctl.8.html#list_bindings)
+
+### 指定标题
+
+使用Headers作为Exchange 类型时，请 在Headers表中指定与相应标头关联的Name和Value。仅接受字符串值。
+
+![](/image/PDI_TransStep_Table_Headers.png)
+
+指定标题有两个选项：
+
+- **匹配所有标头** -要将消息传递到Consumer步骤的队列，生产者消息必须包含Consumer步骤中的所有标头键/值对。
+    >请注意，生产者可能拥有比“消费者”步骤中指定的标题更多的标题。生产者标头必须与所有指定的Consumer标头匹配; 但是，
+    并非所有指定的Consumer标头都必须匹配所有生成器标头。 
+    
+- **匹配任何标头** -对于要传递到Consumer步骤队列的消息，至少一个标头键/值对必须在Consumer步骤和生产者上匹配。 
+
+为Consumer步骤指定头配置并运行转换后，会永久地将头和Consumer配置绑定到指定的队列。即使您随后从此表中删除标头，绑定也将保留在AMQP代理中。
+有关如何验证队列绑定的更多信息，请参阅：[https：//www.rabbitmq/rabbitmqctl.8.html#list_bindings ](https：//www.rabbitmq/rabbitmqctl.8.html#list_bindings )
+
+### 安全选项卡
+
+![](/image/PDI_TransStep_Tab_Security_AMQP-Consumer.png)
+
+“安全”选项卡允许您为AMPQ代理定义身份验证凭据。此选项卡包括以下选项：
+
+| 选项 | 描述 |
+| --- | --- |
+| 用户名 | 指定访问AMQP代理所需的用户名。 |
+| 密码 | 指定与用户名关联的密码。 |
+| 使用安全协议 | 如果要为连接定义SSL属性，请选择此选项。<br>**此安全协议设置仅在PDI中使用。它不用于AEL Spark。** |
+| SSL属性 | **上下文算法** - 指定您正在使用的安全协议的名称。<br>**密钥存储区密码** - 指定希望此连接使用的密钥存储区的密码。<br>**密钥库路径** - 指定要使用此安全连接的密钥库的文件路径位置。<br>**密钥库类型** - 指定密钥库类型的标识名称或字符串。<br>**信任存储密码** - 指定您希望此安全连接使用的信任存储对象的密码。<br>**信任存储路径** - 指定希望此安全连接使用的信任存储库证书的文件路径位置。<br>**信任存储类型** - 指定信任存储的格式。 |
+
+### 批量标签
+
