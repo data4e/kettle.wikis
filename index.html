@@ -20,25 +20,19 @@
             '/.*/_sidebar.md': '/_sidebar.md'
         },
         subMaxLevel: 3,
-//        homepage: 'home.md',
         auto2top: true,
         notFoundPage: '404.md',
         repo: 'https://github.com/gitors/kettle.wikis',
         homepage: 'index.md',
         search: {
-            maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-            paths: 'auto', // or 'auto'
-            // 支持本地化
+            maxAge: 86400000,
+            paths: 'auto',
             placeholder: {
                 '/': '搜索'
             },
-
-            // 支持本地化
             noData: {
                 '/': '找不到结果'
             },
-
-            // 搜索标题的最大程级, 1 - 6
             depth: 6
         },
         plugins: [
