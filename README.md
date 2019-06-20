@@ -6,6 +6,8 @@
 
 本文档目前以Kettle8.2版本为例，其他版本可酌情参考。
 
+更多详细说明，可以阅读[index.md](/index.md)
+
 # 鸣谢
 
 - [Kettle官方文档](https://help.pentaho.com)
