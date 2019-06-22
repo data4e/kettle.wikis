@@ -7,7 +7,7 @@
     - [数据库链接](/spoon/db-conect)
     - [使用插件](/spoon/plugins.md)
     - [kettle资源库](/spoon/repositorie.md)
-   - [转换步骤](/transformationStep.md)
+   - [转换步骤](/step/transformationStep.md)
     - [Abort中止步骤](/step/abort.md)
     - [添加校验列](/step/addACheckSum.md)
     - [Ampq消费者](/step/ampqConsumer.md)
