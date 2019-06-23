@@ -10,6 +10,8 @@
 
 # 鸣谢
 
-- [Kettle官方文档](https://help.pentaho.com)
+- [Kettle官方帮助文档](https://help.pentaho.com)
+- [我也不知道是不是官方的文档](https://wiki.pentaho.com)
 - [Google Translate](https://translate.google.com/intl/en/about/)
 - [Docsify](https://docsify.js.org/#/)
+- [使用PDI构建开源ETL解决方案](https://book.douban.com/subject/25866405/)
