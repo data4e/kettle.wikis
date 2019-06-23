@@ -1,7 +1,7 @@
 # 认识kettle
 
 ### kettle简介
-- **kettle** 也被叫做 **Pentaho Data Integration(简称 PDI )** 
+- **kettle** 也被叫做 **Pentaho Data Integration(简称 PDI )**  ，在以后的内容中，可能会存在Kettle、PDI 等名称，这两个名称没有什么不一样，望悉知。
 - [百度百科](https://baike.baidu.com/item/Kettle)对kettle已经有详细对介绍，此处对```kettle```的定义不做赘述。
 - 其他介绍资料可参考 **开源中国** 的开源软件介绍 ：[开源 ETL 工具 Kettle](https://www.oschina.net/p/kettle)
 - 对于介绍 **kettle** 的书籍，推荐[使用PDI构建开源ETL解决方案](https://book.douban.com/subject/25866405/)(本文档有很多内容也是来源于本书)

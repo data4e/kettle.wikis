@@ -22,5 +22,6 @@
     - BigData
    - 资源下载
     - [驱动包](/download)
-   - 问题汇总
+   - 常见问题处理
     - [QQ群问题收集](/Q&A/group%60s%20qq%20Q&A.md)
+    - [Kettle故障排除](/Q&A/dataIntegrationIssues.md)
