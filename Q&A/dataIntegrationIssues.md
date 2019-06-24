@@ -38,3 +38,34 @@
 ## 排除数据库连接问题
 
 如果您在PDI中遇到数据库连接问题，请检查以下条件是否适用于您的情况：
+
+### 不支持的数据库
+
+可以通过ODBC或JDBC连接使用通用数据库驱动程序从不受支持的数据库中读取数据。如果要访问尚未包含在[受支持组件]()列表中的数据库类型，请与Pentaho联系  。
+
+您可以在位于`````... \ design-tools \ data-integration```下的lib 目录中  添加或替换数据库驱动程序文件  。
+
+### 从单个表读取和更新时的数据库锁定
+
+如果您在转换中创建，读取和更新单个表的步骤，您可能会遇到数据库锁定或处理速度变慢。在单个转换中读取和更新表上的行可能导致数据库停止更新。
+
+例如，如果您有一个从表中的行读取的步骤（表输入  步骤），并且您需要使用更新  步骤更新转换，则可能会导致锁定问题，尤其是对于MS SQL数据库。应避免在同一个表中读取和更新同一转换中的行。
+
+与所有数据库兼容的通用解决方案是复制要读取/更新的表，然后创建单独的读取/更新步骤。安排在转换中按顺序执行的步骤，每个步骤在同一个表的不同但相同的版本上。调整数据库行锁定参数或机制也将解决此问题。
+
+### 强制PDI在参数化SQL查询中使用DATE而不是TIMESTAMP
+
+如果查询优化器错误地使用谓词TIMESTAMP，那是因为JDBC驱动程序/数据库将数据类型从TIMESTAMP转换为DATE。在某些情况下，此转换会阻止数据库的查
+询优化器使用正确的索引。例如，Oracle可能声明它无法使用索引，并生成以下错误消息：
+
+```$xslt
+The predicate DATE used at line ID 1 of the execution plan contains an implicit
+   data type conversion on indexed column DATE. This implicit data type conversion prevents
+   the optimizer from selecting indices on table A.
+  
+```
+
+要解决此问题，使用Select Values步骤，并设置Precision到1和Value到DATE。这些更改会强制将参数设置为DATE而不是TIMESTAMP。
+
+### PDI无法识别对表所做的更改
+
