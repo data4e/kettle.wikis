@@ -69,3 +69,101 @@ The predicate DATE used at line ID 1 of the execution plan contains an implicit
 
 ### PDI无法识别对表所做的更改
 
+如果在PDI客户端之外编辑表布局，则PDI不会发现任何字段更改，删除或添加。
+
+清除缓存可解决此问题。需要清除缓存中与数据库相关的元信息（每个使用的数据库表中的字段名称及其类型）。PDI具有此缓存以提高处理速度。执行以下步
+骤以从PDI客户端中清除缓存中的此信息：
+
+1. 选择连接。
+2. **选择工具>数据库>清除缓存或数据库连接>清除完整的数据库缓存。**
+
+### Pentaho Server上安排的作业无法在远程Carte服务器上执行转换
+
+尝试安排作业在远程Carte服务器上运行时，您可能会看到类似于以下消息的错误：
+
+```
+ERROR 11-05 09:33:06,031 - !UserRoleListDelegate.ERROR_0001_UNABLE_TO_INITIALIZE_USER_ROLE_LIST_WEBSVC!
+        com.sun.xml.ws.client.ClientTransportException: The server sent HTTP status code 401: Unauthorized
+
+```
+
+您需要进行以下配置更改以远程执行预定作业：
+
+> 将Pentaho Server用作动态Carte集群中的负载均衡器也需要此过程。
+
+1. 停止Pentaho和Carte服务器。
+2. 将repositories.xml 文件从工作站上的.kettle文件夹复制到Carte slave上的相同位置。如果没有此文件，Carte slave将无法连接到Pentaho Repository以检索PDI内容。
+3. 在文本编辑器中打开/pentaho/server/pentaho-server/tomcat/webapps/pentaho/WEB-INF/web.xml文件。
+4. 找到该  Proxy Trusting Filter 部分，并将您的Carte服务器的IP地址添加到该param-value 元素。以下代码块是该Proxy Trusting Filter 部分的示例  ：
+
+```
+<filter>
+    <filter-name>Proxy Trusting Filter</filter-name>
+    <filter-class>org.pentaho.platform.web.http.filters.ProxyTrustingFilter</filter-class>
+    <init-param>
+      <param-name>TrustedIpAddrs</param-name>
+      <param-value>127.0.0.1,192.168.0.1</param-value>
+      <description>Comma separated list of IP addresses of a trusted hosts.</description>
+    </init-param>
+    <init-param>
+      <param-name>NewSessionPerRequest</param-name>
+      <param-value>true</param-value>
+      <description>true to never re-use an existing IPentahoSession in the HTTP session; needs to be true to work around code put in for BISERVER-2639</description>
+    </init-param>
+</filter>
+```
+
+5. 取消注释<!-- begin trust -->和<!-- end trust -->标记之间的代理信任过滤器映射，如以下示例代码块所示：
+
+```
+<!-- begin trust --> 
+<filter-mapping>
+  <filter-name>Proxy Trusting Filter</filter-name>
+  <url-pattern>/webservices/authorizationPolicy</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+  <filter-name>Proxy Trusting Filter</filter-name>
+  <url-pattern>/webservices/roleBindingDao</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+  <filter-name>Proxy Trusting Filter</filter-name>
+  <url-pattern>/webservices/userRoleListService</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+  <filter-name>Proxy Trusting Filter</filter-name>
+  <url-pattern>/webservices/unifiedRepository</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+  <filter-name>Proxy Trusting Filter</filter-name>
+  <url-pattern>/webservices/userRoleService</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+  <filter-name>Proxy Trusting Filter</filter-name>
+  <url-pattern>/webservices/Scheduler</url-pattern>
+</filter-mapping>
+
+<filter-mapping>
+  <filter-name>Proxy Trusting Filter</filter-name>
+  <url-pattern>/webservices/repositorySync</url-pattern>
+</filter-mapping>
+<!-- end trust -->
+```
+
+6. 保存并关闭该文件，然后 在运行Carte服务器的计算机上编辑carte.sh或Carte.bat启动脚本。
+
+7. 添加-Dpentaho.repository.client.attemptTrust=true到文件底部的java行，如下面的示例代码行所示：
+
+```
+java $OPT -Dpentaho.repository.client.attemptTrust=true org.pentaho.di.www.Carte "${1+$@}"
+
+```
+
+8. 保存并关闭文件。
+9. 启动您的Carte和Pentaho服务器。
+
+**您现在可以安排作业在远程Carte实例上运行。**
