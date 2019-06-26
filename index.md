@@ -20,7 +20,7 @@
 ### 如何贡献
 
 1. 可以在[GitHub](https://github.com/gitors/kettle.wikis) 上 ```fork``` 文档仓库，新增的内容后，提交 ```Pull Requests``` 。
-2. 为了解决Github访问慢的问题，本仓库在[Gitee]()有一个镜像仓库，也可以通过此仓库贡献代码 。
+2. 为了解决Github访问慢的问题，本仓库在[Gitee](https://gitee.com/coderlwl/kettle.wikis)有一个镜像仓库，也可以通过此仓库贡献代码 。
 3. 除了贡献文档，也可以直接在GitHub上提[Issues](https://github.com/gitors/kettle.wikis/issues/new)给我，我会综合考虑大家的建议来完善此文档。
 4. 可以通过每个页面右上方的 ```在github上编辑此页``` 来对单独的页面进行编辑完善。
 5. 其他方式请联系本人邮箱 ```1@gitor.org``` 。
