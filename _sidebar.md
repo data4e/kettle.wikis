@@ -10,8 +10,9 @@
    - [转换步骤](/step/transformationStep.md)
     - [Abort中止步骤](/step/abort.md)
     - [添加校验列](/step/addACheckSum.md)
-    - [Ampq消费者](/step/ampqConsumer.md)
     - [添加常量](/step/addAConstants.md)
+    - [添加序列]()
+    - [Ampq消费者](/step/ampqConsumer.md)
     - [复制记录到结果](/step/copyRowsToResult.md)
    - KitChen
    - Pan
