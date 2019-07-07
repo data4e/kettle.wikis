@@ -13,7 +13,8 @@
     - [添加常量](/step/addAConstants.md)
     - [添加序列]()
     - [Amqp消费者](/step/ampqConsumer.md)
-    - [Amqp生产者](/step/ampqConsumer.md)
+    - [Amqp生产者](/step/ampqProducer.md)
+    - [追加溜](/step/ampqConsumer.md)
     - [复制记录到结果](/step/copyRowsToResult.md)
    - KitChen
    - Pan
