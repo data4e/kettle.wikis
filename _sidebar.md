@@ -11,7 +11,7 @@
     - [Abort中止步骤](/step/abort.md)
     - [添加校验列](/step/addACheckSum.md)
     - [添加常量](/step/addAConstants.md)
-    - [添加序列]()
+    - [添加序列](/step/addSequence.md)
     - [Amqp消费者](/step/ampqConsumer.md)
     - [Amqp生产者](/step/ampqProducer.md)
     - [追加溜](/step/ampqConsumer.md)
