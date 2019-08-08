@@ -31,4 +31,12 @@ AMQP Producer步骤需要“设置”和“安全”选项卡中的定义才能�
 ### 安全(Security)
 ![](/step/image/PDI_TransStep_Tab_Security_AMQP-Producer.png)
 
+### 元数据注入支持
+
+此步骤的所有字段都支持元数据注入。您可以将此步骤与[ETL元数据注入]一起使用，以在运行时将元数据传递给转换。 ```//TODO``` 
+
+### 你可能需要看
+
+[AMQP消费者](./ampqConsumer.md)
+
 
