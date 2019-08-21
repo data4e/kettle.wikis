@@ -29,7 +29,7 @@ AMQP Producer步骤需要“设置”和“安全”选项卡中的定义才能�
 
 
 ### 安全(Security)
-![](/step/image/PDI_TransStep_Tab_Security_AMQP-Producer.png)
+![](/image/PDI_TransStep_Tab_Security_AMQP-Producer.png)
 
 ### 元数据注入支持
 
