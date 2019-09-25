@@ -15,6 +15,7 @@
 | [AMQP Producer](/step/amqpProducer.md) | AMQP消费者 | Streaming | 将消息以近乎实时的方式发布到 AMQP 代理。 |
 | [Add sequence](/step/addSequence.md) | 添加序列 | 转换 | 从序列中获取下一个值。 |
 | [Add value fields changing sequence]() | 添加值字段更改序列 | 转换 | 根据字段值更改添加序列。每次至少一个字段的值改变时，PDI将重置序列。 |
+| [Data Validator](/step/dataValidator.md) | 数据检验 | 验证 | 根据一组规则验证传递的数据。 |
  
 ### 步骤：G - L.
 

@@ -16,6 +16,7 @@
     - [Amqp生产者](/step/amqpProducer.md)
     - [追加流]()
     - [复制记录到结果](/step/copyRowsToResult.md)
+    - [数据检验](/step/dataValidator.md)
    - KitChen
    - Pan
    - Carte
