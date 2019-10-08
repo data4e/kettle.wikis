@@ -38,6 +38,6 @@ AMQP Producer步骤需要“设置”和“安全”选项卡中的定义才能�
 
 ### 你可能需要看
 
-[AMQP消费者](step/ampqConsumer.md)
+[AMQP消费者](./amqpConsumer.md)
 
 

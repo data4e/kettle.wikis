@@ -172,5 +172,5 @@ AMQP Consumer步骤仅支持Auto-Ack消息。当步骤接收到auto-ack消息时
 
 ### 推荐阅读
 
-[AMQP生产者](step/ampqProducer.md)
+[AMQP生产者](./amqpProducer.md)
 
