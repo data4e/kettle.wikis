@@ -1,4 +1,5 @@
 module.exports = {
+  base: '.vuepress/dist/',
   title: 'kettle.wiki',
   description: 'Just playing around',
   themeConfig: {
