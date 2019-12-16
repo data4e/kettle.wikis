@@ -21,7 +21,7 @@
 
 ### General
 
-![](/image/PDI_TransStep_Dialog_AMQP-Consumer.png)
+![](./image/PDI_TransStep_Dialog_AMQP-Consumer.png)
 
 为“ 步骤名称”和“ 转换”字段输入以下信息：
 
@@ -48,7 +48,7 @@ AMQP Consumer步骤要求您在“设置”，“安全性”，“批次”，�
 
 ### 设置选项
 
-![](/image/PDI_TransStep_Tab_Setup_AMQP-Consumer.png)
+![](./image/PDI_TransStep_Tab_Setup_AMQP-Consumer.png)
 
 在“设置”选项卡中，指定队列名称，交换名称，交换类型以及路由键或标头的连接。您可以  [创建新的AMQP消息队列](.)或[使用现有的AMQP消息队列]()。 
 
@@ -90,7 +90,7 @@ AMQP使用者设置选项卡中的选项和设置使您可以在第一次在转�
 
 使用DIRECT或TOPIC  作为Exchange 类型时，请 在“路由密钥”表中指定相应的路由密钥（或多个密钥）。路由键作为字符串名称输入。
 
-![](/image/PDI_TransStep_Table_Routing-Keys.png)
+![](./image/PDI_TransStep_Table_Routing-Keys.png)
 
 > 如果选择  DIRECT作为Exchange类型，并将Exchange名称留空，则无论是否在表中指定任何路由键，都会将在“ 队列名称”选项中指定的队列名称用作路由密钥。
 
@@ -100,7 +100,7 @@ AMQP使用者设置选项卡中的选项和设置使您可以在第一次在转�
 
 使用Headers作为Exchange 类型时，请 在Headers表中指定与相应标头关联的Name和Value。仅接受字符串值。
 
-![](/image/PDI_TransStep_Table_Headers.png)
+![](./image/PDI_TransStep_Table_Headers.png)
 
 指定标题有两个选项：
 
@@ -115,7 +115,7 @@ AMQP使用者设置选项卡中的选项和设置使您可以在第一次在转�
 
 ### 安全选项卡
 
-![](/image/PDI_TransStep_Tab_Security_AMQP-Consumer.png)
+![](./image/PDI_TransStep_Tab_Security_AMQP-Consumer.png)
 
 “安全”选项卡允许您为AMPQ代理定义身份验证凭据。此选项卡包括以下选项：
 
@@ -128,7 +128,7 @@ AMQP使用者设置选项卡中的选项和设置使您可以在第一次在转�
 
 ### 批量标签
 
-![批量标签](/image/PDI_TransStep_Tab_Batch_AMQP-Consumer.png)
+![批量标签](./image/PDI_TransStep_Tab_Batch_AMQP-Consumer.png)
 
 使用此选项卡可以创建用于摄取的窗口。您可以指定消息计数和/或特定时间量。
 
@@ -144,9 +144,9 @@ AMQP Consumer步骤仅支持Auto-Ack消息。当步骤接收到auto-ack消息时
 
 > 无论是**记录数**或**时间**必须包含的值大于“0”运行转变更大。
 
-### 字段选项卡
+## 字段选项卡
 
-![](/image/PDI_TransStep_Tab_Fields_AMQP-Consumer.png)
+![](./image/PDI_TransStep_Tab_Fields_AMQP-Consumer.png)
 
 使用此选项卡可以定义记录格式的字段。
 
@@ -156,9 +156,9 @@ AMQP Consumer步骤仅支持Auto-Ack消息。当步骤接收到auto-ack消息时
 | 输出名称 | 指定替换输出名称以使用与输入名称不同的字段名称。输出名称的数据类型必须匹配类型的的输入名称。 |
 | 类型 | 此字段标识输入名称的数据类型，不能更改。 |
 
-### 结果字段选项卡
+## 结果字段选项卡
 
-![](/image/PDI_TransStep_Tab_Results-Field_AMQP-Consumer.png)
+![](./image/PDI_TransStep_Tab_Results-Field_AMQP-Consumer.png)
 
 使用此选项卡从子转换中选择将记录流回父转换的步骤。此功能允许父转换中的AMQP Consumer步骤处理的记录向下游传递到同一父转换中包含的任何其他步骤。
 
@@ -166,11 +166,11 @@ AMQP Consumer步骤仅支持Auto-Ack消息。当步骤接收到auto-ack消息时
 | --- | --- | 
 | 返回字段： | 选择将字段流回父转换的步骤名称（来自子转换）。这些返回字段中的数据值将可用于父转换中的任何后续下游步骤。 |
 
-### 元数据注入支持
+## 元数据注入支持
 
 此步骤的所有字段都支持元数据注入。您可以将此步骤与[ETL元数据注入]()一起使用，以在运行时将元数据传递给转换。
 
-### 推荐阅读
+## 推荐阅读
 
-[AMQP生产者](step/amqpProducer.md)
+[AMQP生产者](./amqpProducer.md)
 

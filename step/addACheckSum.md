@@ -2,9 +2,9 @@
 
 此步骤计算输入流中一个或多个字段的校验和，并将其作为新字段添加到输出中。
 
-![](/image/PDI_TransStep_Dialog_AddChecksum.png)
+![](./image/PDI_TransStep_Dialog_AddChecksum.png)
 
-### 选项(options)
+## 选项(options)
 
 **添加校验列**步骤具有以下选项：
 
@@ -19,12 +19,12 @@
 | 字段 | 在表格中，指定要从CSV文件中读取转换的字段。|
 | 获得领域 | 单击“  获取字段”以使该步骤使用从源文件派生的字段填充表。此步骤标识的所有字段都将添加到表中. |
 
-### 例子
+## 例子
 
 您的Pentaho发行版包含位于此文件夹中的CRC32示例：
 
 ```design-tools/data-integration/samples/transformations/Add a checksum - Basic CRC32 example.ktr```
 
-### 元数据注入支持
+## 元数据注入支持
 
 此步骤的所有字段都支持元数据注入。您可以将此步骤与**ETL元数据注入**一起使用，以在运行时将元数据传递给转换。

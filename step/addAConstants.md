@@ -1,12 +1,12 @@
 # 添加常量(Add Constants)
 
-### 描述
+## 描述
 
 “添加常量值”步骤是一种向流中添加常量值的简单且高性能的方法。
 
-![addConstants](/image/add-const.png)
+![addConstants](./image/add-const.png)
 
-### 选项
+## 选项
 
 | 选项 | 描述 |
 | --- | --- |
