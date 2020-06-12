@@ -12,7 +12,7 @@ if [[ -n "$1" ]]; then
 	git checkout web-site
 	rm -rf -y docs
 	git checkout master docs/
-	cp -r docs/* ./
+	mv -r docs/* ./
 	rm -rf docs
 
 	git add .
