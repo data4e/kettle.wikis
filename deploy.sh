@@ -12,7 +12,7 @@ if [[ -n "$1" ]]; then
 	git checkout web-site
 	rm -rf -y docs
 	git checkout master docs/
-	mv -r docs/* ./
+	cp -r docs/* ./
 	rm -rf docs
 
 	git add .
@@ -20,6 +20,10 @@ if [[ -n "$1" ]]; then
 	git push origin web-site
 
 	git checkout master
+	rm -rf -y docs
+	git add .
+	git commit -m "$1"
+	git push
 else
 	echo "请填写提交信息... 例如 ./deploy.sh commmit mesage"
 fi
