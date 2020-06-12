@@ -4,6 +4,9 @@ module.exports = {
   description: 'Just playing around',
   themeConfig: {
     sidebarDepth: 1,
+    nav: [
+      { text: 'GitHub', link: 'https://github.com/data4e/kettle.wikis', target:'_blank', rel:'' }
+    ],
     sidebar: [
       {
         title: '入门',   // 必要的
